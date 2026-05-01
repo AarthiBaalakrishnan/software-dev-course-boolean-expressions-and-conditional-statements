@@ -42,7 +42,7 @@ if (choice === "mountains" && hasTorch) {
   console.log("You get lost and wander aimlessly.");
 }
 
-/* 
+/*
 
 Add Customization and expand the game:
   - Add more choices and scenarios.
