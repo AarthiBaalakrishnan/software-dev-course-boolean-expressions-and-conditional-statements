@@ -28,12 +28,27 @@ const readline = require('readline-sync');
 
 const hasTorch = true;
 const hasMap = false;
+let hasSword = false;
+let hasCompass = false;
 
 console.log("You see two paths: one leads to the mountains, the other to the village.");
 const choice = readline.question("Do you go to the 'mountains' or the 'village'?");
 
 if (choice === "mountains" && hasTorch) {
   console.log("You safely navigate through the dark mountains.");
+let cave = readline.question("You find a cave. Enter it? (yes/no): ");
+if (cave === "yes") {
+  console.log("You found a sword!");
+  hasSword = true;
+}
+let enemy = readline.question("A wild creature appears! Fight or run? ");
+if (enemy === "fight" && hasSword) {
+  console.log("You defeated the creature with your sword!");
+} else if (enemy === "fight" && !hasSword) {
+  console.log("You were defeated...");
+} else {
+  console.log("You escaped safely.");
+}
 } else if (choice === "mountains" && !hasTorch) {
   console.log("It's too dark to proceed. You decide to turn back.");
 } else if (choice === "village" || hasMap) {
@@ -41,6 +56,10 @@ if (choice === "mountains" && hasTorch) {
 } else {
   console.log("You get lost and wander aimlessly.");
 }
+
+
+
+  
 
 /*
 
